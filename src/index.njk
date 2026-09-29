@@ -1,0 +1,95 @@
+---
+layout: base.njk
+---
+
+<section class="panel p-hero" data-bg="#F7F4EC" data-fg="#2E3135" style="--pbg:#F7F4EC;--pfg:#2E3135">
+<div class="p-in rv">
+<p class="p-eye">全齡財商教育</p>
+<h1 class="p-h">從小到老<br>學會和錢好好相處</h1>
+<p class="p-sub">理財是一輩子的必修課，學校卻很少教。<br class="br-d">明墨陪每個年紀的人，建立正確的金錢觀</p>
+<p class="p-links"><a href="#kids">看看適合誰</a><a href="/contact/">預約諮詢</a></p>
+</div>
+<div class="p-ill p-ill-wide">{% include "ill/hero.njk" %}</div>
+</section>
+
+<section class="panel" id="kids" data-bg="#F5D77F" data-fg="#2E3135" style="--pbg:#F5D77F;--pfg:#2E3135">
+<div class="p-in rv">
+<p class="p-eye">小朋友・國小低中高年級</p>
+<h2 class="p-h">從小<span class="hgap"></span>就懂錢從哪裡來</h2>
+<p class="p-sub">用遊戲和生活例子，認識賺錢、存錢與分享</p>
+<p class="p-links"><a href="/courses/kids/#why">了解課程</a><a href="/junior/">逛逛小朋友版</a></p>
+</div>
+<div class="p-ill rv">{% include "ill/kids.njk" %}</div>
+</section>
+
+<section class="panel" id="teens" data-bg="#CADFE0" data-fg="#2E3135" style="--pbg:#CADFE0;--pfg:#2E3135">
+<div class="p-in rv">
+<p class="p-eye">大小孩・國中 高中 大學</p>
+<h2 class="p-h">走進社會前<br>先修好金融課</h2>
+<p class="p-sub">銀行、信用、投資與常見的金融陷阱，一步一步學會</p>
+<p class="p-links"><a href="/courses/teens/#why">了解課程</a></p>
+</div>
+<div class="p-ill rv">{% include "ill/teens.njk" %}</div>
+</section>
+
+<section class="panel" id="adults" data-bg="#2E3135" data-fg="#F7F4EC" style="--pbg:#2E3135;--pfg:#F7F4EC">
+<div class="p-in rv">
+<p class="p-eye">大人・上班族與三明治族</p>
+<h2 class="p-h">上有父母<span class="hgap"></span>下有孩子<br>家裡的財務一次理清</h2>
+<p class="p-sub">企業內訓・企業內部輔導・演講</p>
+<p class="p-links"><a href="/courses/adults/#why">了解課程</a></p>
+</div>
+<div class="p-ill rv">{% include "ill/adults.njk" %}</div>
+</section>
+
+<section class="panel" id="seniors" data-bg="#6E5444" data-fg="#F7F4EC" style="--pbg:#6E5444;--pfg:#F7F4EC">
+<div class="p-in rv">
+<p class="p-eye">長輩・熟齡與退休族</p>
+<h2 class="p-h">守住一輩子的積蓄<br>也好好傳承</h2>
+<p class="p-sub">分辨詐騙・贈與與遺產稅觀念・財富傳承規劃</p>
+<p class="p-links"><a href="/courses/seniors/#why">了解課程</a></p>
+</div>
+<div class="p-ill rv">{% include "ill/seniors.njk" %}</div>
+</section>
+
+<section class="panel" id="coaching" data-bg="#EADBB8" data-fg="#2E3135" style="--pbg:#EADBB8;--pfg:#2E3135">
+<div class="p-in rv">
+<p class="p-eye">一對一諮詢・陪跑</p>
+<h2 class="p-h">一對一<br>陪你走到目標</h2>
+<p class="p-sub">找出問題、擬定計畫，執行時持續陪伴調整。所有族群皆可預約</p>
+<p class="p-links"><a href="/courses/coaching/#why">了解方式</a><a href="/contact/">預約諮詢</a></p>
+</div>
+<div class="p-ill rv">{% include "ill/coaching.njk" %}</div>
+</section>
+
+<section class="panel" id="articles" data-bg="#ECE6DA" data-fg="#2E3135" style="--pbg:#ECE6DA;--pfg:#2E3135">
+<div class="p-in rv">
+<p class="p-eye">財商資料庫</p>
+<h2 class="p-h">理財知識<br>隨時回來查閱</h2>
+<p class="p-sub">依主題分類，不定期更新</p>
+<p class="p-links"><a href="/articles/">進入資料庫</a></p>
+</div>
+<div class="p-kb rv">
+<ul class="kb-cats">{% for c in categories.categories %}<li><a href="/articles/#{{ c.slug }}">{{ c.name }}</a></li>{% endfor %}</ul>
+{% set latest = collections.articles | head(3) %}{% if latest.length %}<ol class="kb-new">{% for a in latest %}<li><a href="{{ a.url }}"><span>{{ a.data.category or "文章" }}</span>{{ a.data.title }}</a></li>{% endfor %}</ol>{% endif %}
+</div>
+</section>
+
+<section class="panel" id="about" data-bg="#F7F4EC" data-fg="#2E3135" style="--pbg:#F7F4EC;--pfg:#2E3135">
+<div class="p-in rv">
+<p class="p-eye">關於明墨</p>
+<h2 class="p-h p-serif">洞察如明<span class="hgap"></span>思富如墨</h2>
+<p class="p-sub">看清現況，是做好決定的第一步；財商像墨色，要一點一滴累積</p>
+<p class="p-links"><a href="/about/">認識明墨</a></p>
+</div>
+<div class="p-ill rv">{% include "ill/emblems.njk" %}</div>
+</section>
+
+<section class="panel p-last" id="contact" data-bg="#2E3135" data-fg="#F7F4EC" style="--pbg:#2E3135;--pfg:#F7F4EC">
+<div class="p-in rv">
+<p class="p-eye">聯絡我們</p>
+<h2 class="p-h">從一次談話開始</h2>
+<p class="p-sub">課程規劃、企業內訓、演講邀約或一對一諮詢，都歡迎與我們聯繫</p>
+<p class="p-links"><a href="/contact/">線上詢問</a><a href="{{ site.line }}" target="_blank" rel="noopener">加入 LINE 官方帳號</a></p>
+</div>
+</section>

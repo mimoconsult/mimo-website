@@ -1,0 +1,42 @@
+[
+ {
+  "key": "kids",
+  "name": "小朋友",
+  "title": "小朋友財商課",
+  "href": "/courses/kids/",
+  "bg": "#F5D77F",
+  "fg": "#2E3135"
+ },
+ {
+  "key": "teens",
+  "name": "大小孩",
+  "title": "金融先修課",
+  "href": "/courses/teens/",
+  "bg": "#CADFE0",
+  "fg": "#2E3135"
+ },
+ {
+  "key": "adults",
+  "name": "大人",
+  "title": "家庭財務與企業內訓",
+  "href": "/courses/adults/",
+  "bg": "#2E3135",
+  "fg": "#F7F4EC"
+ },
+ {
+  "key": "seniors",
+  "name": "長輩",
+  "title": "防詐與財富傳承",
+  "href": "/courses/seniors/",
+  "bg": "#6E5444",
+  "fg": "#F7F4EC"
+ },
+ {
+  "key": "coaching",
+  "name": "所有族群",
+  "title": "一對一諮詢陪跑",
+  "href": "/courses/coaching/",
+  "bg": "#EADBB8",
+  "fg": "#2E3135"
+ }
+]

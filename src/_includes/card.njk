@@ -1,0 +1,8 @@
+{% set lv = a.data.level or 1 %}{% set cslug = a.data.category | catSlug(categories.categories) %}
+<a class="acard" href="{{ a.url }}" data-cat="{{ cslug }}" data-lv="{{ lv }}" data-text="{{ a.data.title | escape }} {{ a.data.summary | escape }} {{ a.data.category | escape }}">
+{% if a.data.cover %}<img src="{{ a.data.cover }}" alt="" loading="lazy">{% endif %}
+<span class="row">{% if a.data.category %}<span class="cat">{{ a.data.category }}</span>{% endif %}<time datetime="{{ a.date | isoDate }}">{{ a.date | twDate }}</time>{% include "lvl.njk" %}</span>
+<h3>{{ a.data.title }}</h3>
+{% if a.data.summary %}<p>{{ a.data.summary }}</p>{% endif %}
+<span class="more">閱讀全文</span>
+</a>

@@ -1,0 +1,34 @@
+---
+layout: base.njk
+title: 聯絡我們
+permalink: /contact/
+---
+<section id="contact" class="contact pg-sec" data-bg="#2E3135" data-fg="#F7F4EC"><div class="wrap">
+<div class="shead"><p class="eyebrow">與我們聯絡</p><h1 class="pg-h1">聯絡我們</h1></div>
+<div class="cgrid">
+<div class="cintro">
+<p>不論是課程規劃、企業內訓、演講邀約或一對一諮詢，都歡迎透過 LINE 官方帳號或線上表單與我們聯繫</p>
+<p class="tagline">洞察如明，思富如墨</p>
+<div class="line-card">
+<a class="qr" href="{{ site.line }}" target="_blank" rel="noopener">{% include "line-qr.njk" %}</a>
+<div class="line-info"><p class="line-t">加入 LINE 官方帳號</p><p class="line-d"><span class="only-d">掃描條碼或</span>點下方按鈕加入好友，直接傳訊息詢問</p><a class="btn line-btn" href="{{ site.line }}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s6.1-3.6 8.3-6.1c1.5-1.7 2.2-3.3 2.2-4.9C22 6.6 17.5 3 12 3z"/></svg>加入好友</a></div>
+</div>
+</div>
+<form class="cform" name="contact" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="contact">
+<p class="hp"><label><span>請勿填寫 </span><input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<p class="cf-t">線上詢問</p>
+<div class="cf-row">
+<label><span>稱呼<em>*</em></span><input name="稱呼" required autocomplete="name" placeholder="例如：王小姐"></label>
+<label><span>身分<em>*</em></span><select name="身分" required><option value="">請選擇</option><option>家長</option><option>學生</option><option>上班族</option><option>長輩或家屬</option><option>學校或團體</option><option>企業</option><option>其他</option></select></label>
+</div>
+<label><span>想了解的服務</span><select name="服務"><option value="">請選擇</option><option>小朋友財商課</option><option>大小孩先修課</option><option>大人理財與企業內訓</option><option>長輩防詐與財富傳承</option><option>一對一諮詢・陪跑</option><option>演講邀約</option><option>其他</option></select></label>
+<label><span>回覆方式<em>*</em></span><input name="聯絡方式" required placeholder="電子信箱、手機或 LINE 帳號擇一"></label>
+<label><span>需求說明</span><textarea name="需求說明" rows="4" placeholder="例如：對象年齡、人數、希望的時間或想解決的問題"></textarea></label>
+<p class="cf-note">您留下的資料僅用於回覆本次詢問</p>
+<button class="btn primary" type="submit">送出詢問</button>
+<p class="cf-msg" role="status" hidden></p>
+</form>
+</div>
+</div></section>
+<script>(function(){var f=document.querySelector('.cform');if(!f)return;var m=f.querySelector('.cf-msg'),b=f.querySelector('button[type=submit]');f.addEventListener('submit',function(e){e.preventDefault();b.disabled=true;b.textContent='送出中…';fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(function(r){if(!r.ok)throw 0;f.reset();m.textContent='已收到您的詢問，我們會盡快與您聯繫，謝謝';m.hidden=false;b.textContent='已送出'}).catch(function(){m.textContent='送出失敗，請稍後再試，或透過官方帳號與我們聯繫';m.hidden=false;b.disabled=false;b.textContent='送出詢問'})})})();</script>
