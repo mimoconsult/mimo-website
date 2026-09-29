@@ -1,0 +1,79 @@
+# 明墨管理顧問 文章後台設定
+backend:
+  name: github
+  repo: mimoconsult/mimo-website
+  branch: main
+
+locale: zh_Hant
+site_url: https://www.mimo.tw
+display_url: https://www.mimo.tw
+
+media_folder: src/uploads
+public_folder: /uploads
+
+collections:
+  - name: articles
+    label: 財商文章
+    label_singular: 文章
+    folder: src/articles
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{hour}}{{minute}}"
+    sortable_fields: [date, title]
+    summary: "{{title}}（{{date | date('YYYY-MM-DD')}}）"
+    fields:
+      - { label: 標題, name: title, widget: string }
+      - { label: 發布日期, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - label: 分類
+        name: category
+        widget: relation
+        collection: settings
+        file: categories
+        search_fields: ["categories.*.name"]
+        value_field: "categories.*.name"
+        display_fields: ["categories.*.name"]
+      - { label: 摘要（顯示在文章列表，約 60 字）, name: summary, widget: text, required: false }
+      - label: 深淺
+        name: level
+        widget: select
+        default: 1
+        options:
+          - { label: "山腳・入門（沒有基礎也能輕鬆讀）", value: 1 }
+          - { label: "山腰・進階（有基本概念，想再往上走）", value: 2 }
+          - { label: "山頂・深入（涉及稅務、法規或專業計算）", value: 3 }
+      - { label: 閱讀時間（分鐘）, name: readTime, widget: number, value_type: int, required: false }
+      - label: 開頭「這篇跟你有什麼關係？」
+        name: hook
+        widget: object
+        required: false
+        fields:
+          - { label: 一個直接問讀者的問題（大字，讓人想點頭或愣一下）, name: question, widget: string }
+          - { label: 一兩句話接住讀者（說中他的處境，帶出為什麼要讀下去）, name: text, widget: text, required: false }
+          - label: 讀完你會知道（三個短句，每句十個字內）
+            name: gain
+            widget: list
+            required: false
+            field: { label: 短句, name: item, widget: string }
+      - label: 結尾「帶走這三件事」
+        name: takeaways
+        widget: list
+        required: false
+        field: { label: 一句重點, name: item, widget: string }
+      - { label: 封面圖片, name: cover, widget: image, required: false }
+      - { label: 內文, name: body, widget: markdown }
+
+  - name: settings
+    label: 網站設定
+    editor: { preview: false }
+    files:
+      - name: categories
+        label: 文章分類
+        file: src/_data/categories.json
+        fields:
+          - label: 分類
+            name: categories
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: 分類名稱, name: name, widget: string }
+              - { label: 網址代稱（英文小寫與連字號，例如 investing）, name: slug, widget: string, pattern: ["^[a-z0-9-]+$", "只能使用英文小寫、數字與連字號"] }
+              - { label: 簡短說明, name: description, widget: string, required: false }

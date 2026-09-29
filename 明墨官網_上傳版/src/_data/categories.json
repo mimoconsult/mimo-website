@@ -1,0 +1,39 @@
+{
+  "categories": [
+    {
+      "name": "理財觀念",
+      "slug": "basics",
+      "description": "建立正確的金錢觀與財務思維"
+    },
+    {
+      "name": "收支與預算",
+      "slug": "budget",
+      "description": "記帳、預算與現金流管理"
+    },
+    {
+      "name": "債務管理",
+      "slug": "debt",
+      "description": "貸款、信用與負債的聰明處理"
+    },
+    {
+      "name": "投資入門",
+      "slug": "investing",
+      "description": "認識資產配置與常見投資工具"
+    },
+    {
+      "name": "保險規劃",
+      "slug": "insurance",
+      "description": "用保險管理人生風險"
+    },
+    {
+      "name": "退休與傳承",
+      "slug": "retirement",
+      "description": "退休準備與財富傳承"
+    },
+    {
+      "name": "企業財務",
+      "slug": "business",
+      "description": "經營者必懂的財務管理"
+    }
+  ]
+}
